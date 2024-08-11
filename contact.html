@@ -1,0 +1,211 @@
+<html>
+    <head>
+        <meta http-equiv = "X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title> LearnCode Contact </title> 
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    </head>
+    <body>
+        <!--Navigation Bar-->
+        <nav>
+            <a href="index.html">
+                <img src="Logo.jpg" alt="">
+            </a>
+            <div class="navigation">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="course.html">COURSES</a></li>
+                    <li><a class="active" href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--Home Section-->
+        <section id="contact_home">
+            <p>
+                Contact
+            </p>
+        </section>
+        
+        <!--Contact Body-->
+        <section id="contact">
+            <div class="left">
+                <h2> Get In Touch</h2>
+                <p>
+                    We would love to hear from you.
+                </p>
+                <div class="left_details">
+                    <h3>  Headquarters </h3>
+                    <div>
+                        <i class="far fa-home get"></i>
+                        <p>
+                            Presidency University
+                        </p>
+                    </div>
+                    <h3> Phone </h3>
+                    <div>
+                        <i class="fas fa-phone-alt get"></i>
+                        <p>
+                            +91 0987654321 <br> +91 1234567890
+                        </p>
+                    </div>
+                    <h3>  Support </h3>
+                    <div>
+                        <i class="fal fa-envelope-open-text get"></i>
+                        <p>
+                            contactLearnCode@support.com <br>
+                            LearnCodeOfficial@support.com
+                        </p>
+                    </div>
+                    <h3>  Follow Us </h3>
+                    <div class="pro-links">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2> Let'Connect </h2>
+                <p> 
+                    Looking for help? Fill this form and we'll get back to you.
+                </p>
+                <form onsubmit="return ConnectFormVal()">
+                    <div class="form-row">
+                        <input type="text" placeholder="Your Name" id="con_name">
+                        <input type="email" placeholder="Your E-mail Address" id="con_mail">
+                    </div>
+                    <div class="form-col">
+                        <input type="text" placeholder="Subject" id="con_sub">
+                    </div>
+                    <div class="form-col">
+                        <textarea id="con_text" cols="30" rows="8" placeholder="How can we help?"></textarea>
+                    </div>
+                    <div class="form-btn">
+                        <input class="form_submit" type="submit" value="Send Message">
+                    </div>
+                </form>
+                <script>
+                    function ConnectFormVal()
+                    {
+                        var n = document.getElementById('con_name');
+                        var e = document.getElementById('con_mail');
+                        var s = document.getElementById('con_sub');
+                        var t = document.getElementById('con_text');
+
+                        if(notEmpty(n, "Name can not be empty")){
+                            if(isAlphabet(n, "Please enter only letters")){
+                                if(emailValidator(e, "Please enter a valid E-mail address")){
+                                    if(notEmpty(s,"Subject cannot be empty.")){
+                                        if(notEmpty(t,"Message cannot be empty.")){
+                                            alert("Message Received. We'll get back to you shortly.")
+                                        }
+                                    }
+                                }
+                            } 
+                        }
+                        return false;
+                    }
+                    function notEmpty(elem, helperMsg){ 
+                        if(elem.value.length == 0){
+                            alert(helperMsg);
+                            elem.focus();
+                            return false;
+                        }
+                        return true;
+                    }
+                    function isAlphabet(elem, helperMsg){
+                        var alphaExp = /^[a-zA-Z'. ]+$/;
+                        if(elem.value.match(alphaExp)){
+                            return true;
+                        }
+                        else{
+                            alert(helperMsg);
+                            elem.focus();
+                            return false;
+                        }
+                    }
+                    function emailValidator(elem, helperMsg) 
+                    {
+                        var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+                        if(elem.value.match(emailExp))
+                        {
+                            return true;
+                        }
+                        else{
+                            alert(helperMsg);
+                            elem.focus();
+                            return false;
+                        }
+                    }
+                </script>
+            </div>
+        </section>
+
+        <!--Map section-->
+        <section id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124315.23882843716!2d77.46612165820314!3d13.17177960000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae21be4ad63a55%3A0x1008adb771c3d236!2sPresidency%20University!5e0!3m2!1sen!2sin!4v1684832852063!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <!--Footer Section-->
+        <footer>
+            <div class="footer-col">
+                <h3> Top Courses </h3>
+                <li> <a href="https://www.coursera.org/learn/intro-programming" target="_blank"> Code Yourself! An Introduction to Programming  </a></li>
+                <li> <a href="https://www.udemy.com/course/c-programming-for-beginners-/" target="_blank"> C Programming For Beginners </a> </li>
+                <li> <a href="https://www.udemy.com/course/beginning-c-plus-plus-programming/" target="_blank"> Beginning C++ Programming - From Beginner to Beyond </a> </li>
+                <li> <a href="https://www.udemy.com/course/100-days-of-code/" target="_blank"> Python Pro Bootcamp </li>
+                <li> <a href="https://practice.geeksforgeeks.org/courses/Java-Programming-basic-to-advanced/?source=google&medium=cpc&device=c&keyword=learn%20java%20programming&matchtype=b&campaignid=19482437270&adgroup=144681918923&gad=1&gclid=CjwKCAjwpayjBhAnEiwA-7enawNpUA7rfcCwoa6MCKPUgZdidIQElCsXJVJTbnuWNZmdnqbGwY9M3BoCv8cQAvD_BwE" target="_blank"> Master Java Programming </a> </li>
+            </div>
+            <div class="footer-col">
+                <h3> Top Links </h3>
+                <li> <a href="index.html">Home</a> </li>
+                <li> <a href="about.html">About</a> </li>
+                <li> <a href="blog.html">Blog</a> </li>
+                <li> <a href="course.html">Courses</a> </li>
+                <li> <a href="contact.html">Contact</a> </li>
+            </div>
+            <div class="footer-col">
+                <h3> Newsletter </h3>
+                <p> Stay Updated by subscribing to our newsletter </p>
+                <div class="subscribe">
+                    <input id="subs" type="text" placeholder="Enter your E-mail Address">
+                    <a onclick="AlertFunc()" class="yellow">SUBSCRIBE</a>
+                    <script>
+                        var sub = document.getElementById('subs');
+                        function AlertFunc() {
+                            if(emailValidator(sub, "Please enter a valid E-mail address")){
+                                alert("Thank you for subscribing.");
+                            }                            
+                        }
+                        function emailValidator(elem, helperMsg) 
+                        {
+                            var emailExp = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+                            if(elem.value.match(emailExp))
+                            {
+                                return true;
+                            }
+                            else{
+                                alert(helperMsg);
+                                elem.focus();
+                                return false;
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>
+                    Copyright &copy;2023.This website is made by the students of Presidency University, Bangalore.
+                </p>
+                <div class="con_links">
+                    <i class="fab fa-facebook-f fa-2x"></i>
+                    <i class="fab fa-instagram fa-2x"></i>
+                    <i class="fab fa-linkedin-in fa-2x"></i>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
